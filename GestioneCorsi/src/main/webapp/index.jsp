@@ -18,19 +18,20 @@
 				<h3>Login</h3>
 			</div>
 			<div class="card-body">
-				<form>
+				<form action="/<%=application.getServletContextName()%>/login"
+				method="post" class="form-horizontal">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" name="nomeadmin" class="form-control" placeholder="nome...">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" name="codadmin" class="form-control" placeholder="codice...">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Ricordati

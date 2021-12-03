@@ -24,22 +24,26 @@ public class Login extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		
+		String adminpass;
+		
 		if (nomeadmin != null && codadmin != null) {
-		try {
-			LoginControl lc = new LoginControl();
-			codadmin = lc.getAdminPass(codadmin);
-			if (codadmin != null) {
-				if (codadmin.equals(codadmin)) {
-					session.setAttribute("admin", nomeadmin);
-					response.sendRedirect("admin/admin.jsp");
-				} else
+			try {
+				LoginControl lc = new LoginControl();
+				adminpass = lc.getAdminPass(nomeadmin);
+				System.out.println(adminpass);
+				if (adminpass != null) {
+					System.out.println("sono dentro al 1 if");
+					if (adminpass.equals(codadmin)) {
+						session.setAttribute("admin", nomeadmin);
+						response.sendRedirect("home.jsp");
+					} else
+						response.sendRedirect("accessonegato.jsp");
+				}else
 					response.sendRedirect("accessonegato.jsp");
-			}else
-				response.sendRedirect("accessonegato.jsp");
-		} catch (DAOException | ClassNotFoundException exc) {
-			exc.printStackTrace();
-			throw new ServletException(exc.getMessage());
-		  }
+			} catch (DAOException | ClassNotFoundException exc) {
+				exc.printStackTrace();
+				throw new ServletException(exc.getMessage());
+			}
 		}
 	}
 }
