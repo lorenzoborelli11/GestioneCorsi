@@ -30,7 +30,6 @@ public class Login extends HttpServlet {
 			try {
 				LoginControl lc = new LoginControl();
 				adminpass = lc.getAdminPass(nomeadmin);
-				System.out.println(adminpass);
 				if (adminpass != null) {
 					System.out.println("sono dentro al 1 if");
 					if (adminpass.equals(codadmin)) {
