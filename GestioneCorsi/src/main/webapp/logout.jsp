@@ -1,8 +1,8 @@
 
 <%
-	String user = (String) session.getAttribute("username");
-	String admin = (String) session.getAttribute("admin");
-if (user != null || admin !=null) {
+String user = (String) session.getAttribute("username");
+String admin = (String) session.getAttribute("admin");
+if (user != null || admin != null) {
 	session.invalidate();
 %>
 
@@ -19,23 +19,41 @@ if (user != null || admin !=null) {
 <title>Logout</title>
 </head>
 <body>
-	<div class="panel panel-danger">
-		<div class="panel heading">
-			<h3>Hai appena effettuato il logout</h3>
-		</div>
 
-		<div class="panel-body">
-			<p>Per effettuare di nuovo il login effetuare il login</p>
-			<p>
-				<a href="index.jsp">Login >></a>
+
+
+
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h3>Hai fatto il logout con successo</h3>
+				</div>
+
+				<div class="card-footer">
+					<div class="d-flex justify-content-center links">
+						Per effettuare di nuovo il login
+					</div>
+					
+						<a href="index.jsp" class="btn btn-info" role="button">Ritorna
+							al Login</a>
+					</p>
+
+				</div>
+			</div>
 		</div>
 	</div>
+
+
+	</div>
+
+
 
 </body>
 </html>
 
 <%
-	} else {
+} else {
 response.sendRedirect("accessonegato.jsp");
 }
 %>

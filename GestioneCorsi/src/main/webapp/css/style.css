@@ -76,11 +76,13 @@ margin-right: 5px;
 color: black;
 background-color: #FFC312;
 width: 100px;
+padding: 8px;
 }
 
 .login_btn:hover{
 color: black;
 background-color: white;
+padding: 8px;
 }
 
 .links{
@@ -90,3 +92,18 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+#inp1{
+	margin-left: 3px;
+}
+#inp2{
+	margin-left: 3px;
+}
+#inp3{
+	margin-left: 3px;
+}
+#inp4{
+	margin-top: 6px;
+	margin-left: 10px;
+}
+
