@@ -1,4 +1,4 @@
-package com.padova.architecture.DAO;
+package com.padova.architecture.dao;
 
 import java.sql.Connection;
 

@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.padova.architecture.DAO.DAOException;
-import com.padova.architecture.DAO.DocentiDAO;
+import com.padova.architecture.dao.DAOException;
+import com.padova.architecture.dao.DocentiDAO;
 import com.padova.architecture.model.Docenti;
 import com.padova.dbacess.DBAccess;
 

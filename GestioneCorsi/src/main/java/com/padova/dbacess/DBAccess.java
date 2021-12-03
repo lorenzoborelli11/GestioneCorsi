@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.padova.architecture.DAO.DAOException;
+import com.padova.architecture.dao.DAOException;
 
 public class DBAccess {
 	private static Connection conn;

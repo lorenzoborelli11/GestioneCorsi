@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
-import com.padova.architecture.DAO.DAOException;
+import com.padova.architecture.dao.DAOException;
 import com.padova.dbacess.DBAccess;
 
 class TestDBAccess {

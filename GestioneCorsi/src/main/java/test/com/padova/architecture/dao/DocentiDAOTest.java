@@ -8,8 +8,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.padova.architecture.DAO.DAOException;
-import com.padova.architecture.DAO.DocentiDAO;
+import com.padova.architecture.dao.DAOException;
+import com.padova.architecture.dao.DocentiDAO;
 import com.padova.architecture.model.Docenti;
 import com.padova.dbacess.DBAccess;
 

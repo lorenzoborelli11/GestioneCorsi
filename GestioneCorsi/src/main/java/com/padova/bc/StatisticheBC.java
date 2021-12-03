@@ -6,8 +6,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
-import com.padova.architecture.DAO.DAOException;
-import com.padova.architecture.DAO.StatisticheDAO;
+import com.padova.architecture.dao.DAOException;
+import com.padova.architecture.dao.StatisticheDAO;
 import com.padova.dbacess.DBAccess;
 
 public class StatisticheBC {
