@@ -21,7 +21,7 @@ public interface DAOConstants {
 
 	
 	//--------AMMINISTRATORI--------
-	
+	String SELECT_ADMINPASS = "Select codadmin from amministratore where nomeadmin = ?";
 	
 	//--------STATISTICHE--------
 	

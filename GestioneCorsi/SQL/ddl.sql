@@ -4,7 +4,6 @@ cognomeadmin varchar2(30) not null,
 codadmin varchar2(30) not null
 );
 
-
 create table statistiche(
 corsofrequentato varchar2(30),
 datainizioultimocorso date,
