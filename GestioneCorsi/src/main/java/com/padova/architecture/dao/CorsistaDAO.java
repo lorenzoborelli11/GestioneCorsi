@@ -113,4 +113,25 @@ public class CorsistaDAO implements GenericDAO<Corsista>, DAOConstants {
 		return corsista;
 	}
 
+	@Override
+	public Corsista getById(Connection conn, long id) throws DAOException {
+		Corsista corsista = null;
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(SELECT_CORSISTI_BY_ID);
+			ps.setLong(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				corsista = new Corsista();
+				corsista.setNomeCorsista(rs.getString(1));
+				corsista.setCognomeCorsista(rs.getString(2));
+				corsista.setCodCorsista(rs.getInt(3));
+				corsista.setPrecedentiFormativi(rs.getInt(4));
+			}
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		}
+		return corsista;
+	}
+
 }

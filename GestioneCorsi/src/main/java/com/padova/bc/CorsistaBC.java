@@ -20,7 +20,7 @@ public class CorsistaBC {
 		idGen = IdGeneratorCorsisti.getInstance();
 	}
 	
-	public void create(Corsista corsista) throws DAOException, ClassNotFoundException, FileNotFoundException, IOException {
+	public void createCosista(Corsista corsista) throws DAOException, ClassNotFoundException, FileNotFoundException, IOException {
 		try {
 			corsista.setCodCorsista(idGen.getNextId());
 			CorsistaDAO.getFactory().create(conn, corsista);
@@ -29,7 +29,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public void delete(Corsista corsista) throws DAOException {
+	public void deleteCosista(Corsista corsista) throws DAOException {
 		try {
 			CorsistaDAO.getFactory().delete(conn, corsista);
 		} catch (SQLException e) {
@@ -37,7 +37,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public Corsista[] getUtenti() throws DAOException {
+	public Corsista[] getCosisti() throws DAOException {
 		Corsista[] corsisti = null;
 		try {
 			corsisti = CorsistaDAO.getFactory().getAll(conn);
@@ -47,7 +47,7 @@ public class CorsistaBC {
 		return corsisti;
 	}
 	
-	public Corsista getById(Corsista corsista) throws DAOException {
+	public Corsista getCosistaById(Corsista corsista) throws DAOException {
 		try {
 			return CorsistaDAO.getFactory().getById(conn, corsista);
 		} catch (SQLException e) {
