@@ -1,4 +1,4 @@
-package com.padova.architecture.model;
+package com.lorenz.architecture.model;
 
 public class Corso {
 
