@@ -8,7 +8,7 @@
       <li><a href="#">Aggiungi</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
