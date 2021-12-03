@@ -7,5 +7,5 @@ import com.padova.architecture.dao.DAOException;
 
 public interface IdGeneratorInterface {
 	
-	long getNextId() throws DAOException, ClassNotFoundException, IOException;
+	int getNextId() throws DAOException, ClassNotFoundException, IOException;
 }

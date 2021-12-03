@@ -7,12 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.padova.architecture.dao.DAOConstants;
 import com.padova.architecture.dao.DAOException;
 import com.padova.dbacess.DBAccess;
 
 
 
-public class IdGeneratorCorsisti implements IdGeneratorInterface {
+public class IdGeneratorCorsisti implements IdGeneratorInterface, DAOConstants {
 
 	private static IdGeneratorCorsisti istanza;
 	private Connection conn;
@@ -34,13 +35,13 @@ public class IdGeneratorCorsisti implements IdGeneratorInterface {
 	}
 
 	@Override
-	public long getNextId() throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
-		long id;
+	public int getNextId() throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
+		int id;
 		try {
 			stmt = conn.createStatement();
-			//rs = stmt.executeQuery(SELECT_ARTICOLO_SEQ);
+			rs = stmt.executeQuery(SELECT_CORSISTA_SEQ);
 			rs.next();
-			id = rs.getLong(1);
+			id = rs.getInt(1);
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);

@@ -31,13 +31,13 @@ public class IdGeneratorCorsi implements IdGeneratorInterface {
 	}
 
 	@Override
-	public long getNextId() throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
-		long id;
+	public int getNextId() throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
+		int id;
 		try {
 			stmt = conn.createStatement();
 			//rs = stmt.executeQuery(SELECT_ARTICOLO_SEQ);
 			rs.next();
-			id = rs.getLong(1);
+			id = rs.getInt(1);
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
