@@ -104,7 +104,7 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 	}
 
 	@Override
-	public Corsi getById(Connection conn, Corsi model) throws DAOException {
+	public Corsi getById(Connection conn, long id) throws DAOException {
 		
 		Corsi corso=null;
 		PreparedStatement ps;
@@ -112,7 +112,7 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 		try {
 			ps=conn.prepareStatement(SELECT_CORSI_BY_ID);
 			
-			ps.setLong(1, model.getCodCorso());
+			ps.setLong(1, id);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -132,6 +132,15 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 			}
 		return corso;
 			
+	}
+	@Override
+	public Corsi getById(Connection conn, Corsi model) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Corsi[] getByCodCorsista(Connection conn, long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

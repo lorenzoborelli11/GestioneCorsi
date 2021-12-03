@@ -9,4 +9,5 @@ public interface GenericDAO<T> {
 	void delete(Connection conn, T model) throws DAOException;
 	T[] getAll(Connection conn) throws DAOException;
 	T getById(Connection conn, T model) throws DAOException;
+	T getById(Connection conn, long id) throws DAOException;
 }
