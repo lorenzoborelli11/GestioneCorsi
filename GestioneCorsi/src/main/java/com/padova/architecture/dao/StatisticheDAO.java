@@ -128,4 +128,9 @@ public class StatisticheDAO implements GenericDAO<Statistica> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public Statistica getById(Connection conn, long id) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

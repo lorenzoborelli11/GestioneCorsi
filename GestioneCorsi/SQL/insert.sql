@@ -1,4 +1,5 @@
 insert into amministratore values('Mario','Rossi','MarioRossi01');
+insert into amministratore values('lollo','Rossi','pass');
 
 insert into docenti values('Alessio','Bruni','ipotetico contenuto del cv',1);
 insert into docenti values('Marco','Tanni','ipotetico contenuto del cv',2);

@@ -82,5 +82,11 @@ public class DocentiDAO implements DAOConstants, GenericDAO<Docenti>{
 		}
 		return docente;
 	}
+
+	@Override
+	public Docenti getById(Connection conn, long id) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
