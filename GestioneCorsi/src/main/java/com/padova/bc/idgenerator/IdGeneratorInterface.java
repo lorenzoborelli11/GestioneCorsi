@@ -1,4 +1,4 @@
-package com.lorenz.bc.idgenerator;
+package com.padova.bc.idgenerator;
 
 import java.io.IOException;
 

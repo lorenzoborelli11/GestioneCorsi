@@ -1,4 +1,4 @@
-package com.lorenz.architecture.dao;
+package com.padova.architecture.DAO;
 
 public interface DAOConstants {
 	//--------DOCENTI--------

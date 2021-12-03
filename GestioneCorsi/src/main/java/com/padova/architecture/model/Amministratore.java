@@ -1,4 +1,4 @@
-package com.lorenz.architecture.model;
+package com.padova.architecture.model;
 
 public class Amministratore {
 

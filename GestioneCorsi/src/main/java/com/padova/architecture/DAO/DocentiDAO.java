@@ -1,4 +1,4 @@
-package com.lorenz.architecture.dao;
+package com.padova.architecture.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import javax.sql.rowset.CachedRowSet;
 
-import com.lorenz.architecture.model.Docenti;
+import com.padova.architecture.model.Docenti;
 
 public class DocentiDAO implements DAOConstants, GenericDAO<Docenti>{
 	

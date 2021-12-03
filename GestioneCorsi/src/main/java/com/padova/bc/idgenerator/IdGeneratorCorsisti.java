@@ -1,4 +1,4 @@
-package com.lorenz.bc.idgenerator;
+package com.padova.bc.idgenerator;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.lorenz.architecture.dao.DAOException;
-import com.lorenz.dbacess.DBAccess;
+import com.padova.architecture.dao.DAOException;
+import com.padova.dbacess.DBAccess;
 
 
 

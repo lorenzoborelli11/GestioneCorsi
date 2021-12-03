@@ -1,4 +1,4 @@
-package com.lorenz.bc;
+package com.padova.bc;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
-import com.lorenz.architecture.dao.DAOException;
-import com.lorenz.architecture.dao.StatisticheDAO;
-import com.lorenz.dbacess.DBAccess;
+import com.padova.architecture.DAO.DAOException;
+import com.padova.architecture.DAO.StatisticheDAO;
+import com.padova.dbacess.DBAccess;
 
 public class StatisticheBC {
 private Connection conn;

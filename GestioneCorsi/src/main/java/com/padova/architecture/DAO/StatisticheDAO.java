@@ -1,4 +1,4 @@
-package com.lorenz.architecture.dao;
+package com.padova.architecture.DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.Date;
 
 
-import com.lorenz.architecture.model.Statistica;
+import com.padova.architecture.model.Statistica;
 
 public class StatisticheDAO implements GenericDAO<Statistica> {
 	

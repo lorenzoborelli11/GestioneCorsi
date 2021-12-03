@@ -1,4 +1,4 @@
-package com.lorenz.dbacess;
+package com.padova.dbacess;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.lorenz.architecture.dao.DAOException;
+import com.padova.architecture.dao.DAOException;
 
 public class DBAccess {
 	private static Connection conn;

@@ -1,13 +1,11 @@
-package test.com.lorenz.dbacess;
+package test.com.padova.dbaccess;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 
-import org.junit.jupiter.api.Test;
 
-import com.lorenz.architecture.dao.DAOException;
-import com.lorenz.dbacess.DBAccess;
+import com.padova.architecture.DAO.DAOException;
+import com.padova.dbacess.DBAccess;
 
 class TestDBAccess {
 

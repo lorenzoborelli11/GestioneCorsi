@@ -1,4 +1,4 @@
-package test.com.lorenz.architecture.dao;
+package test.com.padova.architecture.dao;
 
 public class CorsiTest {
 

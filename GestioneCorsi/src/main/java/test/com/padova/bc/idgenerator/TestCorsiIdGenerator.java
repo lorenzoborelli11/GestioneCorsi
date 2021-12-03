@@ -1,4 +1,4 @@
-package test.com.lorenz.bc.idgenerator;
+package test.com.padova.bc.idgenerator;
 
 public class TestCorsiIdGenerator {
 

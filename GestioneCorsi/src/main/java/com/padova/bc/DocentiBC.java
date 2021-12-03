@@ -1,14 +1,14 @@
-package com.lorenz.bc;
+package com.padova.bc;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.lorenz.architecture.dao.DAOException;
-import com.lorenz.architecture.dao.DocentiDAO;
-import com.lorenz.architecture.model.Docenti;
-import com.lorenz.dbacess.DBAccess;
+import com.padova.architecture.DAO.DAOException;
+import com.padova.architecture.DAO.DocentiDAO;
+import com.padova.architecture.model.Docenti;
+import com.padova.dbacess.DBAccess;
 
 public class DocentiBC {
 	private Connection conn;
