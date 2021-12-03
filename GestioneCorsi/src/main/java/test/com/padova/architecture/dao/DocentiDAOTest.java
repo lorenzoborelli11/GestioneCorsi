@@ -1,18 +1,17 @@
-package test.com.lorenz.architecture.dao;
+package test.com.padova.architecture.dao;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.Connection;
-import java.util.Iterator;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.lorenz.architecture.dao.DAOException;
-import com.lorenz.architecture.dao.DocentiDAO;
-import com.lorenz.architecture.model.Docenti;
-import com.lorenz.dbacess.DBAccess;
+import com.padova.architecture.DAO.DAOException;
+import com.padova.architecture.DAO.DocentiDAO;
+import com.padova.architecture.model.Docenti;
+import com.padova.dbacess.DBAccess;
 
 class DocentiDAOTest {
 	private static Docenti docente;

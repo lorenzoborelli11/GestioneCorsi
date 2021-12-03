@@ -2,7 +2,7 @@ package com.padova.bc.idgenerator;
 
 import java.io.IOException;
 
-import com.lorenz.architecture.dao.DAOException;
+import com.padova.architecture.DAO.DAOException;
 
 
 public interface IdGeneratorInterface {

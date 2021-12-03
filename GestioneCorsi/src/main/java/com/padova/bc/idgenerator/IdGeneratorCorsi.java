@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.padova.architecture.dao.DAOException;
+import com.padova.architecture.DAO.DAOException;
 import com.padova.dbacess.DBAccess;
 
 public class IdGeneratorCorsi implements IdGeneratorInterface {
