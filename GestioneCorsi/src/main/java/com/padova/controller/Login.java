@@ -31,7 +31,6 @@ public class Login extends HttpServlet {
 				LoginControl lc = new LoginControl();
 				adminpass = lc.getAdminPass(nomeadmin);
 				if (adminpass != null) {
-					System.out.println("sono dentro al 1 if");
 					if (adminpass.equals(codadmin)) {
 						session.setAttribute("admin", nomeadmin);
 						response.sendRedirect("home.jsp");
