@@ -79,7 +79,7 @@ public class AdminFacade {
 		cBC.createCosista(corsista);
 	}
 
-	public void deleteCorsoCorsista(Corsista corsista)
+	public void deleteCorsista(Corsista corsista)
 			throws DAOException, FileNotFoundException, ClassNotFoundException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
 		cBC.deleteCosista(corsista);
