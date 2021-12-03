@@ -1,7 +1,10 @@
 package com.padova.architecture.dao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.sql.rowset.CachedRowSet;
 
@@ -19,7 +22,7 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 	@Override
 	public void create(Connection conn, Corsi model) throws DAOException {
 		try {
-			rowSet.setCommand("");
+			rowSet.setCommand(SELECT_CORSI);
 			rowSet.execute();
 			rowSet.moveToInsertRow();
 			
@@ -54,7 +57,7 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 		long id= model.getCodCorso();
 		
 		try {
-			ps=conn.prepareStatement("");
+			ps=conn.prepareStatement(DELETE_CORSI);
 			ps.setLong(1,id);
 			ps.execute();
 			conn.commit();
@@ -66,14 +69,69 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 
 	@Override
 	public Corsi[] getAll(Connection conn) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		Corsi[] corsi=null;
+		
+		try {
+			Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			ResultSet rs= stmt.executeQuery(SELECT_CORSI);
+			rs.last();
+			corsi=new Corsi[rs.getRow()];
+			
+			for(int i=0; rs.next(); i++) {
+				Corsi corso=new Corsi();
+				
+				corso.setCodCorso(rs.getLong(1));
+				corso.setNomeCorso(rs.getString(2));
+				
+				corso.setDataInizioCorso(new java.util.Date(rs.getDate(3).getTime()));
+				corso.setDataFineCorso(new java.util.Date(rs.getDate(4).getTime()));
+				
+				corso.setCostoCorso(rs.getDouble(5));
+				corso.setCommentiCorso(rs.getString(6));
+				corso.setAulaCorso(rs.getString(7));
+				corso.setCodDocente(rs.getLong(8));
+				
+				corsi[i] = corso;
+				
+			}
+			rs.close();
+			
+			
+		}catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return corsi;
 	}
 
 	@Override
 	public Corsi getById(Connection conn, Corsi model) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Corsi corso=null;
+		PreparedStatement ps;
+		
+		try {
+			ps=conn.prepareStatement(SELECT_CORSI_BY_ID);
+			
+			ps.setLong(1, model.getCodCorso());
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				corso=new Corsi();
+				
+				corso.setCodCorso(rs.getLong(1));
+				corso.setNomeCorso(rs.getString(2));
+				corso.setDataInizioCorso(new java.util.Date(rs.getDate(3).getTime()));
+				corso.setDataFineCorso(new java.util.Date(rs.getDate(4).getTime()));
+				corso.setCostoCorso(rs.getDouble(5));
+				corso.setCommentiCorso(rs.getString(6));
+				corso.setAulaCorso(rs.getString(7));
+				corso.setCodDocente(rs.getLong(8));
+			}
+		}catch (SQLException sql) {
+				throw new DAOException(sql);
+			}
+		return corso;
+			
 	}
 	
 

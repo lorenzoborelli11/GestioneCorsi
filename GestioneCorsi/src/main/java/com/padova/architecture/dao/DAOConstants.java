@@ -6,6 +6,9 @@ public interface DAOConstants {
 	String SELECT_DOCENTI = "Select * from docenti";
 	
 	//--------CORSI--------
+	String SELECT_CORSI = "select * from corsi";
+	String DELETE_CORSI = "delete from corsi where codcorso = ?";
+	String SELECT_CORSI_BY_ID = "select * from corsi where codcorso = ?";
 	String SELECT_DATAINIZIOCORSO = "select max(datainiziocorso) from corsi";
 
 	//--------CORSICORSISTI--------
