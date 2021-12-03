@@ -18,12 +18,12 @@ public class CorsoCorsistaDAO implements GenericDAO<CorsoCorsista>, DAOConstants
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
-	}
+	} 
 	
 	public static CorsoCorsistaDAO getFactory() throws DAOException {
 		return new CorsoCorsistaDAO();
 	}
-	
+	//asdasd
 	@Override
 	public void create(Connection conn, CorsoCorsista model) throws DAOException {
 		try {
