@@ -33,4 +33,14 @@ public class CorsoCorsistaBC {
 			throw new DAOException(sql);
 		}
 	}
+	
+	public CorsoCorsista[] getAll() throws DAOException{
+		CorsoCorsista[] cc = null;
+ 		try {
+			cc = CorsoCorsistaDAO.getFactory().getAll(conn);
+		}catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+ 		return cc;
+	}
 }

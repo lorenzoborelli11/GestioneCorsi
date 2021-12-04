@@ -2,7 +2,9 @@ package com.padova.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
@@ -73,8 +75,25 @@ public class CorsoCorsistaDAO implements GenericDAO<CorsoCorsista>, DAOConstants
 
 	@Override
 	public CorsoCorsista[] getAll(Connection conn) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		  CorsoCorsista[] corsoCorsista = null;
+		  try {
+		   Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		   ResultSet rs = stmt.executeQuery(SELECT_CORSO_CORSISTA);
+		   rs.last();
+		   corsoCorsista = new CorsoCorsista[rs.getRow()];
+		   rs.beforeFirst();
+
+		   for (int i = 0; rs.next(); i++) {
+		    CorsoCorsista c = new CorsoCorsista();
+		    c.setIdCorso(rs.getLong(1));
+		    c.setIdCorsista(rs.getLong(2));
+		    corsoCorsista[i] = c;
+		   }
+		   rs.close();
+		  } catch (SQLException e) {
+		   throw new DAOException(e);
+		  }
+		  return corsoCorsista;
 	}
 
 	@Override

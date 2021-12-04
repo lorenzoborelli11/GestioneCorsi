@@ -16,16 +16,32 @@ align-items: center;
 }
 
 .card{
-height: 370px;
+
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+
 background-color: rgba(0,0,0,0.5) !important;
 padding: 20px;
 border-radius: 8px;
 
 }
 
+.check-corsi{
+	display: flex;
+	justify-content: space-between;
+}
+.input-inserisci{
+	margin-bottom: 10px;
+}
+
+.card-body{
+	padding: 20px;
+}
+
+.tarea{
+	resize: none;
+	border-radius: 5px;
+}
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
