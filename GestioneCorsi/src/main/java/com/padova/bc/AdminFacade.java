@@ -70,6 +70,7 @@ public class AdminFacade {
 		ccBC.delete(cc);
 	}
 	
+	
 
 	// ---------------------------CORSISTI---------
 
@@ -82,13 +83,23 @@ public class AdminFacade {
 	public void deleteCorsista(Corsista corsista)
 			throws DAOException, FileNotFoundException, ClassNotFoundException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
-		cBC.deleteCosista(corsista);
+		cBC.deleteCorsista(corsista);
 	}
 	
 	public Corsista[] getCorsisti() throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getCosisti();
 	}
+	
+
+	//	aggiunto da Hsn
+	public Corsista getCorsistaById(Long id) throws ClassNotFoundException,DAOException,FileNotFoundException,IOException{
+		CorsistaBC cBC= new CorsistaBC();
+		return cBC.getCosistaById(id);
+		
+	}
+	
+	
 
 
 	// ---------------------------STATISTICHE--------

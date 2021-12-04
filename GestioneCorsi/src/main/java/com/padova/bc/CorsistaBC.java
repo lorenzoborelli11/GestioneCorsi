@@ -29,7 +29,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public void deleteCosista(Corsista corsista) throws DAOException {
+	public void deleteCorsista(Corsista corsista) throws DAOException {
 		try {
 			CorsistaDAO.getFactory().delete(conn, corsista);
 		} catch (SQLException e) {
@@ -47,9 +47,9 @@ public class CorsistaBC {
 		return corsisti;
 	}
 	
-	public Corsista getCosistaById(Corsista corsista) throws DAOException {
+	public Corsista getCosistaById(Long id) throws DAOException {
 		try {
-			return CorsistaDAO.getFactory().getById(conn, corsista);
+			return CorsistaDAO.getFactory().getById(conn, id);
 		} catch (SQLException e) {
 			throw new DAOException(e);
 		}

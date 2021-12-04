@@ -14,3 +14,9 @@ insert into corsi values(5,'Scienze Biologiche',TO_DATE('2002/01/01 12:00:00', '
 insert into corsi values(6,'Scienze Mediche',TO_DATE('2002/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),TO_DATE('2002/12/30 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),1346,'commenti corso','15', 2);
 insert into corsi values(7,'Scienze Giuridiche',TO_DATE('2002/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),TO_DATE('2002/12/30 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),1357,'commenti corso','16', 3);
 insert into corsi values(8,'Scienze Politiche',TO_DATE('2002/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),TO_DATE('2002/12/30 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),1687,'commenti corso','17', 4);
+
+
+insert into CORSISTI values('Max','Rossi',1,1);
+insert into CORSISTI values('Mario','Bianchi',2,1);
+insert into CORSISTI values('Marta','Rossi',3,1);
+insert into CORSISTI values('Paolo','Rossi',4,1);
