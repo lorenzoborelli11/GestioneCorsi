@@ -13,6 +13,8 @@ import com.padova.bc.utilities.LoginControl;
 import com.padova.bc.AdminFacade;
 import com.padova.architecture.dao.DAOException;
 import com.padova.architecture.model.Corsi;
+import com.padova.architecture.model.Corsista;
+import com.padova.architecture.model.CorsoCorsista;
 import com.padova.architecture.model.Docenti;
 
 @WebServlet("/eliminacorso")
@@ -25,9 +27,19 @@ public class EliminaCorso extends HttpServlet {
 		String admin = request.getParameter("admin");
 		String idCorso = request.getParameter("codCorso");
 		int codCorso = Integer.parseInt(idCorso);
+		
 
 		try {
+			CorsoCorsista[] corsoCorsista = AdminFacade.getInstance().getCorsiCorsisti();
 			if (codCorso != 0) {
+				for (CorsoCorsista cc : corsoCorsista) {
+					if (codCorso == cc.getIdCorso()) {
+						CorsoCorsista c = new CorsoCorsista();
+						c.setIdCorso(cc.getIdCorso());
+						c.setIdCorsista(cc.getIdCorsista());
+						AdminFacade.getInstance().deleteCorsoCorsista(c);
+					}
+				}
 				AdminFacade.getInstance().deleteCorso(codCorso);
 			}
 

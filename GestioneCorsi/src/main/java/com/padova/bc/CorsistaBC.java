@@ -54,4 +54,12 @@ public class CorsistaBC {
 			throw new DAOException(e);
 		}
 	}
+	
+	public Corsista[] getListaCorsistiNonInCorso(long id) throws DAOException {
+		try {
+			return CorsistaDAO.getFactory().getListaCorsistiNonInCorso(conn, id);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		}
+	}
 }

@@ -133,5 +133,43 @@ public class CorsistaDAO implements GenericDAO<Corsista>, DAOConstants {
 		}
 		return corsista;
 	}
+	
+	public Corsista[] getListaCorsistiNonInCorso(Connection conn, long id) throws DAOException {
+		long[] listaIdCorsistiInCorso = null;
+		Corsista[] corsistiInCorso = new Corsista[50];
+		PreparedStatement ps;
+		ResultSet rs;
+
+		try {
+
+			ps = conn.prepareStatement(SELECT_LISTA_CORSISTI_PER_CORSO, ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_READ_ONLY);
+			ps.setLong(1, id);
+			rs = ps.executeQuery();
+
+			rs.last();
+			listaIdCorsistiInCorso = new long[rs.getRow()];
+			rs.beforeFirst();
+
+			for (int i = 0; rs.next(); i++) {
+				for (Corsista corsista : getAll(conn)) {
+					if (rs.getLong(1) != corsista.getCodCorsista()) {
+						Corsista c = new Corsista();
+						c.setNomeCorsista(corsista.getNomeCorsista());
+						c.setCognomeCorsista(corsista.getCognomeCorsista());
+						c.setCodCorsista(corsista.getCodCorsista());
+						c.setPrecedentiFormativi(corsista.getPrecedentiFormativi());
+						corsistiInCorso[i] = c;
+						System.out.println(c.toString());
+					}
+				}
+
+			}
+			rs.close();
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		}
+		return corsistiInCorso;
+	}
 
 }

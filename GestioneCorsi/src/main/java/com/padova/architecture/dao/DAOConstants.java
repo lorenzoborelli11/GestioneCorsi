@@ -24,6 +24,7 @@ public interface DAOConstants {
 	String SELECT_CORSISTI_BY_ID = "Select * from corsisti where codcorsista = ?";
 	String DELETE_CORSISTI = "Delete from corsisti where codcorsista = ?";
 	String SELECT_CORSISTI_TOT = "select count(*) from corsisti";
+	String SELECT_LISTA_CORSISTI_PER_CORSO = "Select idCorsista from corsocorsista where idCorso = ?";
 	
 	//--------AMMINISTRATORI--------
 	String SELECT_ADMINPASS = "Select codadmin from amministratore where nomeadmin = ?";

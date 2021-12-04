@@ -63,6 +63,11 @@ public class AdminFacade {
 		CorsoCorsistaBC ccBC = new CorsoCorsistaBC();
 		ccBC.create(cc);
 	}
+	
+	public CorsoCorsista[] getCorsiCorsisti() throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
+		CorsoCorsistaBC ccBC = new CorsoCorsistaBC();
+		return ccBC.getAll();
+	}
 
 	public void deleteCorsoCorsista(CorsoCorsista cc)
 			throws DAOException, FileNotFoundException, ClassNotFoundException, IOException {
@@ -90,17 +95,18 @@ public class AdminFacade {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getCosisti();
 	}
-	
 
 	//	aggiunto da Hsn
 	public Corsista getCorsistaById(Long id) throws ClassNotFoundException,DAOException,FileNotFoundException,IOException{
 		CorsistaBC cBC= new CorsistaBC();
 		return cBC.getCosistaById(id);
-		
 	}
 	
+	public Corsista[] getListaCorsistiNonInCorso(long idCorso) throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
+		CorsistaBC cBC = new CorsistaBC();
+		return cBC.getListaCorsistiNonInCorso(idCorso);
+	}
 	
-
 
 	// ---------------------------STATISTICHE--------
 	
