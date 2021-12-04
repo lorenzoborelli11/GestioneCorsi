@@ -25,8 +25,7 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 			rowSet.setCommand(SELECT_CORSI);
 			rowSet.execute();
 			rowSet.moveToInsertRow();
-			
-			
+	
 			rowSet.updateLong(1, model.getCodCorso());
 			rowSet.updateString(2, model.getNomeCorso());
 			rowSet.updateDate(3, new java.sql.Date(model.getDataInizioCorso().getTime()));
@@ -76,7 +75,7 @@ public class CorsiDAO implements GenericDAO<Corsi>, DAOConstants{
 			ResultSet rs= stmt.executeQuery(SELECT_CORSI);
 			rs.last();
 			corsi=new Corsi[rs.getRow()];
-			
+			rs.beforeFirst();
 			for(int i=0; rs.next(); i++) {
 				Corsi corso=new Corsi();
 				

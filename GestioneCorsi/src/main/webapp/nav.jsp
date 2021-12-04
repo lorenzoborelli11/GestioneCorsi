@@ -10,7 +10,7 @@ if (admin != null) {
     </div>
     <ul class="nav navbar-nav">
       <li><a href="statistica.jsp">Statistiche</a></li>
-      <li><a href="#">Aggiungi</a></li>
+      <li><a href="inserisci.jsp">Aggiungi</a></li>
       <li><a href="ListaCorsisti.jsp">Lista corsisti</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
