@@ -36,6 +36,12 @@ public class AdminFacade {
 		DocentiBC dBC = new DocentiBC();
 		return dBC.getDocentiById(docente);
 	}
+	
+	public Docenti getDocenteById(Long id)
+			throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
+		DocentiBC dBC = new DocentiBC();
+		return dBC.getDocentiById(id);
+	}
 
 	// ---------------------------CORSI---------
 
