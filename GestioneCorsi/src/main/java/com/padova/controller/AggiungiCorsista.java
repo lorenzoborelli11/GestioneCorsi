@@ -27,8 +27,6 @@ public class AggiungiCorsista extends HttpServlet {
 		HttpSession session = request.getSession();
 		String admin = request.getParameter("admin");
 		Corsista corsista = new Corsista();
-		
-	
 		Corsi co = new Corsi();
 		CorsoCorsista corsocorsista = new CorsoCorsista();
 		String[] corso = request.getParameterValues("corso");
@@ -42,24 +40,23 @@ public class AggiungiCorsista extends HttpServlet {
 			else
 			valore = 0;
 		}
+		System.out.println(corso[0]);
+		System.out.println(precedenti[0]);
 		try {
 			corsista.setNomeCorsista(request.getParameter("nome"));
 			corsista.setCognomeCorsista(request.getParameter("cognome"));
-			
-			for(String cor : corso)
-			{
-			co.setCodCorso(Integer.parseInt(cor));
-			corsocorsista.setIdCorso(Integer.parseInt(cor));
-			corsocorsista.setIdCorsista(IdGeneratorCorsisti.getInstance().getNextId());
-			AdminFacade.getInstance().createCorsoCorsista(corsocorsista);
-			}
 			corsista.setCodCorsista(IdGeneratorCorsisti.getInstance().getNextId());
 			corsista.setPrecedentiFormativi(valore);
 			AdminFacade.getInstance().createCorsista(corsista);
 			
-			session.setAttribute("admin", admin);
-			
-			response.sendRedirect("home.jsp");
+			for(String cor : corso)
+			{
+			corsocorsista.setIdCorso(Integer.parseInt(cor));
+			corsocorsista.setIdCorsista(corsista.getCodCorsista());
+			}
+		
+			AdminFacade.getInstance().createCorsoCorsista(corsocorsista);
+			response.sendRedirect("ListaCorsisti.jsp");
 		} catch (DAOException | ClassNotFoundException e) {
 			e.printStackTrace();
 			throw new ServletException(e.getMessage());

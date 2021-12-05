@@ -20,3 +20,4 @@ insert into CORSISTI values('Max','Rossi',1,1);
 insert into CORSISTI values('Mario','Bianchi',2,1);
 insert into CORSISTI values('Marta','Rossi',3,1);
 insert into CORSISTI values('Paolo','Rossi',4,1);
+

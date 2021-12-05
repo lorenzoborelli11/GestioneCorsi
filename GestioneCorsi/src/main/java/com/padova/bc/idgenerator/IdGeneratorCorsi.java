@@ -7,10 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.padova.architecture.dao.DAOConstants;
 import com.padova.architecture.dao.DAOException;
 import com.padova.dbacess.DBAccess;
 
-public class IdGeneratorCorsi implements IdGeneratorInterface {
+public class IdGeneratorCorsi implements IdGeneratorInterface, DAOConstants {
 	private static IdGeneratorCorsi istanza;
 	private Connection conn;
 	private Statement stmt;
@@ -35,7 +36,7 @@ public class IdGeneratorCorsi implements IdGeneratorInterface {
 		int id;
 		try {
 			stmt = conn.createStatement();
-			//rs = stmt.executeQuery(SELECT_ARTICOLO_SEQ);
+			rs = stmt.executeQuery(SELECT_CORSO_SEQ);
 			rs.next();
 			id = rs.getInt(1);
 

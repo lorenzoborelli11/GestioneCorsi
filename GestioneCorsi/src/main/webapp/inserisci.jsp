@@ -27,7 +27,7 @@ if (admin != null) {
 				</div>
 				<div class="card-body">
 					<form id="corsistaForm"
-						action="/<%=application.getServletContextName()%>/inserisci"
+						action="/<%=application.getServletContextName()%>/aggiungicorsista"
 						method="post" class="form-horizontal">
 
 						<!-- NOME -->
