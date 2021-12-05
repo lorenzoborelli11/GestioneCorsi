@@ -8,6 +8,7 @@ import java.util.Date;
 
 import com.padova.architecture.dao.DAOException;
 import com.padova.architecture.dao.StatisticheDAO;
+import com.padova.architecture.model.Statistica;
 import com.padova.dbacess.DBAccess;
 
 public class StatisticheBC {
@@ -17,15 +18,15 @@ private Connection conn;
 		conn = DBAccess.getConnection();
 	}
 	
-	public String getCorsoFrequentato() throws DAOException {
-		String corso="";
+	public Statistica getCorsoFrequentato() throws DAOException {
+		Statistica sta = new Statistica();
 		try {
-			corso = StatisticheDAO.getFactory().getCorsoFrequentato(conn);
+			sta = StatisticheDAO.getFactory().getCorsoFrequentato(conn);
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
-		return corso;
+		return sta;
 	}
 	public Date getDataInizioUltimoCorso() throws DAOException {
 		Date Datainizio= null;

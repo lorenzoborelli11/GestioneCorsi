@@ -9,6 +9,7 @@ import com.padova.architecture.model.Corsi;
 import com.padova.architecture.model.Corsista;
 import com.padova.architecture.model.CorsoCorsista;
 import com.padova.architecture.model.Docenti;
+import com.padova.architecture.model.Statistica;
 
 public class AdminFacade {
 	private static AdminFacade istanza;
@@ -116,7 +117,7 @@ public class AdminFacade {
 
 	// ---------------------------STATISTICHE--------
 	
-	public String getCorsoFrequentato()
+	public Statistica getCorsoFrequentato()
 			throws ClassNotFoundException, DAOException, FileNotFoundException, IOException {
 		StatisticheBC cfBC = new StatisticheBC();
 		return cfBC.getCorsoFrequentato();

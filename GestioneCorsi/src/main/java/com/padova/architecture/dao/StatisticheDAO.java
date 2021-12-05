@@ -9,24 +9,25 @@ import java.util.Date;
 
 import com.padova.architecture.model.Statistica;
 
-public class StatisticheDAO implements GenericDAO<Statistica> {
+public class StatisticheDAO implements GenericDAO<Statistica>, DAOConstants{
 	
 	public static StatisticheDAO getFactory() throws DAOException{
 		return new StatisticheDAO();
 	}
-	public String  getCorsoFrequentato(Connection conn) throws DAOException {
-		String corsofrequentato = "";
+	public Statistica getCorsoFrequentato(Connection conn) throws DAOException {
+		Statistica sta = new Statistica();
 		try {
 			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = stmt.executeQuery("");
+			ResultSet rs = stmt.executeQuery(SELECT_MAXCORSI);
 			
 			if(rs.next()) {
-				corsofrequentato = rs.getString(1);
+				sta.setCorsoFrequentato(rs.getString(1));
+				sta.setTotalePosti(rs.getInt(2));
 			} 
 			}catch (SQLException sql) {
 				throw new DAOException(sql);
 		}
-		return corsofrequentato;
+		return sta;
 	}
 
 	
@@ -34,7 +35,7 @@ public class StatisticheDAO implements GenericDAO<Statistica> {
 		Date Data = null;
 		try {
 			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = stmt.executeQuery("");
+			ResultSet rs = stmt.executeQuery(SELECT_DATAINIZIOCORSO);
 			
 			if(rs.next()) {
 				Data = (new java.util.Date(rs.getDate(1).getTime()));

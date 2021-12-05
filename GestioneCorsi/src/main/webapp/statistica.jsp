@@ -1,4 +1,5 @@
 
+<%@page import="com.padova.architecture.model.Statistica"%>
 <%@page import="com.padova.architecture.model.Corsi"%>
 <%@page import="com.padova.architecture.model.Docenti"%>
 <%@page import="com.padova.architecture.model.Corsista"%>
@@ -40,10 +41,11 @@
 				<tr>
 					<!-- numero corsisti -->
 					<td width="40%" class="text-right">
-						<p style="font-weight: bold;">Numero corsisti totali</p>
+					<% Corsista[] cor = AdminFacade.getInstance().getCorsisti(); %>
+					<p style="font-weight: bold;">Numero corsisti totali</p>
 					</td>
 					<td width="60%">
-						<p class="font-weight-bold"><%-- <%=statistiche.getNumeroCorsisti()%> --%></p>
+						<p class="font-weight-bold"><%=cor.length %></p>
 					</td>
 				</tr>
 				<tr>
@@ -51,9 +53,9 @@
 					<td width="40%" class="text-right">
 						<p style="font-weight: bold;">Corso pi&ugrave; frequentato</p>
 					</td>
+					<%Statistica sta = AdminFacade.getInstance().getCorsoFrequentato(); %>
 					<td width="60%">
-	
-	<h3>Da fare</h3>
+							<p class="font-weight-bold"><%= sta.getCorsoFrequentato()%> Posti: <%= sta.getTotalePosti() %> </p>
 					</td>
 				</tr>
 				<tr>
@@ -61,9 +63,11 @@
 					<td width="40%" class="text-right">
 						<p style="font-weight: bold;">Data di inizio dell'ultimo corso</p>
 					</td>
+					<% java.text.DateFormat df = new java.text.SimpleDateFormat("dd/MM/yyyy"); %>
+					<% Date datainizio= AdminFacade.getInstance().getDataInizioUltimoCorso(); %>
 					<td width="60%">
-			
-
+						<p class="font-weight-bold"><%= df.format(datainizio)%> </p>
+	
 					</td>
 				</tr>
 

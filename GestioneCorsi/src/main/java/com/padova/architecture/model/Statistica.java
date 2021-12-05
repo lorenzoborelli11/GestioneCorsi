@@ -8,7 +8,9 @@ public class Statistica {
 	private float DurataMediaDeiCorsi;
 	private String Docentetipologie;
 	private String CorsiPostiDisponibili;
+	private int totalePosti;
 	
+
 	public String getCorsoFrequentato() {
 		return CorsoFrequentato;
 	}
@@ -39,7 +41,12 @@ public class Statistica {
 	public void setCorsiPostiDisponibili(String corsiPostiDisponibili) {
 		CorsiPostiDisponibili = corsiPostiDisponibili;
 	}
-	
+	public int getTotalePosti() {
+		return totalePosti;
+	}
+	public void setTotalePosti(int totalePosti) {
+		this.totalePosti = totalePosti;
+	}
 	@Override
 	public String toString() {
 		return "Statistica [CorsoFrequentato=" + CorsoFrequentato + ", DataInizioUltimoCorso=" + DataInizioUltimoCorso
